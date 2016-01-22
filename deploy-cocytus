@@ -1,0 +1,28 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/dmk/fakeroot/lib/
+
+#killall memcached-debug
+
+T="-t 1 -m 4096"
+
+nid=`hostname`
+nid=$((${nid:4}-1))
+
+ng=5
+nl=5
+
+for ((l=$nl-1; l>=0; l--)); do
+    for ((g=0; g<$ng; g++)); do
+        echo -n $l $g
+        t=$(((g+l) % 5))
+        t=$((t-nid))
+        if [ $t -eq 0 ]; then
+            echo -n "hit"
+#            valgrind --tool=memcheck --leak-check=yes ./memcached-debug $T -X $g -x $l -c 16 -g shard.conf | tee valgrind.log &
+            ./memcached $T -X $g -x $l -g shard.conf &
+        fi
+        echo ""
+    done;
+    sleep 1
+done
