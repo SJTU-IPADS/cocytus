@@ -1,4 +1,21 @@
-# Cocytus over Memcached
+# About DrTM
+
+Cocytus is a distributed in-memory key-value store which achieves both efficiency and availability by using hybrid erasure coding and replication. With low overhead for latency and throughput, it saves up to 46% memory compared to traditional primary-backup replications when tolerating two failures. An online recovery scheme is applied when failures are detected so that the whole system is able to serve key-value requests continuously. 
+
+If you use Cocytus in your work or research, please kindly let us know. We also encourage you to reference our paper:
+
+Here is the bibtex:
+
+@inproceedings{zhang2016cocytus,
+author = {Zhang, Heng and Dong, Mingkai Dong and Chen, Haibo},
+title = { Efficient and Available In-memory KV-Store with Hybrid Erasure Coding and Replication},
+booktitle = {Proceedings of the 14th USENIX Conference on File and Storage Technologies},
+series = {FAST '16},
+year = {2016},
+location = {Santa Clara, CA},
+publisher = {ACM},
+} 
+
 
 ## Dependencies
 
@@ -28,4 +45,6 @@ $ make
 ## Website
 
 * http://ipads.se.sjtu.edu.cn/pub/projects/cocytus
+
+
 
