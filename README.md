@@ -1,38 +1,31 @@
-# Memcached
+# Cocytus over Memcached
 
 ## Dependencies
 
 * libevent, http://www.monkey.org/~provos/libevent/ (libevent-dev)
+* Jerasure & GF-Complete, http://jerasure.org/
 
-## Environment
+## Build
 
-### Linux
+To configure and build Cocytus, you need to install the required
+dependencies first. Then execute the following commands.
+```
+$ ./autogen.sh
+$ ./configure --enable-cocytus
+$ make
+```
 
-If using Linux, you need a kernel with epoll.  Sure, libevent will
-work with normal select, but it sucks.
+If the libraries are not installed in the default location, you may
+need to add the CPPFLAGS and LDFLAGS explicitly in the configuration
+phase.
 
-epoll isn't in Linux 2.4, but there's a backport at:
-
-    http://www.xmailserver.org/linux-patches/nio-improve.html
-
-You want the epoll-lt patch (level-triggered).
-
-### Mac OS X
-
-If you're using MacOS, you'll want libevent 1.1 or higher to deal with
-a kqueue bug.
-
-Also, be warned that the -k (mlockall) option to memcached might be
-dangerous when using a large cache.  Just make sure the memcached machines
-don't swap.  memcached does non-blocking network I/O, but not disk.  (it
-should never go to disk, or you've lost the whole point of it)
+```
+$ ./autogen.sh
+$ ./configure --enable-cocytus CPPFLAGS='-I/path/to/include' LDFLAGS='-L/path/to/libs'
+$ make
+```
 
 ## Website
 
-* http://www.memcached.org
+* http://ipads.se.sjtu.edu.cn/pub/projects/cocytus
 
-## Contributing
-
-Want to contribute?  Up-to-date pointers should be at:
-
-* http://contributing.appspot.com/memcached
