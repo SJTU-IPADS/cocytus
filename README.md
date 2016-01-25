@@ -6,15 +6,15 @@ If you use Cocytus in your work or research, please kindly let us know. We also 
 
 Here is the bibtex:
 
-@inproceedings{zhang2016cocytus,
-author = {Zhang, Heng and Dong, Mingkai Dong and Chen, Haibo},
-title = { Efficient and Available In-memory KV-Store with Hybrid Erasure Coding and Replication},
-booktitle = {Proceedings of the 14th USENIX Conference on File and Storage Technologies},
-series = {FAST '16},
-year = {2016},
-location = {Santa Clara, CA},
-publisher = {ACM},
-} 
+    @inproceedings{zhang2016cocytus,
+        author = {Zhang, Heng and Dong, Mingkai Dong and Chen, Haibo},
+        title = { Efficient and Available In-memory KV-Store with Hybrid Erasure Coding and Replication},
+        booktitle = {Proceedings of the 14th USENIX Conference on File and Storage Technologies},
+        series = {FAST '16},
+        year = {2016},
+        location = {Santa Clara, CA},
+        publisher = {ACM},
+    } 
 
 
 ## Dependencies
