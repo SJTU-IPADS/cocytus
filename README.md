@@ -1,4 +1,4 @@
-# About DrTM
+# About Cocytus
 
 Cocytus is a distributed in-memory key-value store which achieves both efficiency and availability by using hybrid erasure coding and replication. With low overhead for latency and throughput, it saves up to 46% memory compared to traditional primary-backup replications when tolerating two failures. An online recovery scheme is applied when failures are detected so that the whole system is able to serve key-value requests continuously. 
 
